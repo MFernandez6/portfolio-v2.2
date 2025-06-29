@@ -53,14 +53,14 @@ export default function Footer() {
                   web development.
                 </p>
 
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  <div className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
+                <div className="flex flex-wrap gap-1 sm:gap-2 lg:gap-3">
+                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
                     Legal Tech
                   </div>
-                  <div className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
+                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
                     Web Development
                   </div>
-                  <div className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
+                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
                     AI Integration
                   </div>
                 </div>
