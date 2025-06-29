@@ -212,11 +212,8 @@ export default function Home() {
                   Miguel Angel Fernandez
                 </h2>
                 <p className="text-lg sm:text-xl text-[#cccccc]">
-                  <span className="block sm:inline">Legal Professional</span>
+                  <span className="block sm:inline">Legal Professional </span>
                   <span className="block sm:inline">& Software Engineer</span>
-                </p>
-                <p className="text-base sm:text-lg text-[#bbbbbb]">
-                  Miami-Dade County, Florida
                 </p>
               </div>
             </div>
@@ -315,12 +312,15 @@ export default function Home() {
                               ? item.details.split("(")[0].trim()
                               : item.details}
                           </div>
-                          <div className="text-blue-300 text-xs opacity-75">
+                          <div className="text-blue-300 text-xs opacity-75 mb-2">
                             {item.details.includes("(")
                               ? item.details
                                   .match(/\([^)]+\)/)?.[0]
                                   ?.replace(/[()]/g, "")
                               : ""}
+                          </div>
+                          <div className="text-yellow-400 text-xs font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                            Click to learn more
                           </div>
                         </CardContent>
                       </Card>
@@ -385,7 +385,7 @@ export default function Home() {
 
       {/* Welcome Modal */}
       <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
-        <DialogContent className="glass max-w-2xl w-full p-8 animated-fadein">
+        <DialogContent className="glass max-w-2xl w-full p-8 animated-fadein [&>button]:text-yellow-400 [&>button]:hover:text-yellow-300 [&>button]:transition-colors">
           <DialogHeader>
             <DialogTitle className="text-yellow-400 text-3xl font-bold text-center mb-2">
               Welcome to Jeopardy!
@@ -417,7 +417,7 @@ export default function Home() {
 
       {/* Item Detail Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="glass max-w-2xl w-full p-8 animated-fadein">
+        <DialogContent className="glass max-w-2xl w-full p-8 animated-fadein [&>button]:text-yellow-400 [&>button]:hover:text-yellow-300 [&>button]:transition-colors">
           <DialogHeader>
             <DialogTitle className="text-yellow-400 text-2xl font-bold mb-2">
               {selectedItem?.content}

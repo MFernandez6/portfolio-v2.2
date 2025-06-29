@@ -268,6 +268,51 @@ async function generateResume() {
                 line-height: 1.2;
             }
             
+            .links-bar {
+                display: flex;
+                justify-content: center;
+                gap: 18px;
+                margin-bottom: 8px;
+                font-size: 9px;
+                color: #2563eb;
+                font-weight: 500;
+                flex-wrap: wrap;
+            }
+            .links-bar a {
+                color: #2563eb;
+                text-decoration: none;
+                border-bottom: 1px dotted #2563eb;
+                transition: color 0.2s;
+            }
+            .links-bar a:hover {
+                color: #1e293b;
+                border-bottom: 1px solid #1e293b;
+            }
+            .footer {
+                text-align: center;
+                font-size: 8px;
+                color: #64748b;
+                margin-top: 18px;
+                border-top: 1px solid #e2e8f0;
+                padding-top: 6px;
+            }
+            .footer .footer-title {
+                font-weight: 600;
+                color: #1e293b;
+                margin-bottom: 2px;
+            }
+            .footer .footer-link {
+                color: #2563eb;
+                text-decoration: none;
+                border-bottom: 1px dotted #2563eb;
+                margin-left: 6px;
+                font-weight: 500;
+            }
+            .footer .footer-link:hover {
+                color: #1e293b;
+                border-bottom: 1px solid #1e293b;
+            }
+            
             @media print {
                 body {
                     font-size: 8px;
@@ -290,6 +335,7 @@ async function generateResume() {
                     <div class="contact-item">📍 Miami-Dade County, Florida</div>
                     <div class="contact-item">📧 MiguelFernandez023@gmail.com</div>
                     <div class="contact-item">📱 (786) 417-3869</div>
+                    <div class="contact-item">🌐 MiguelAngelFernandez.com</div>
                 </div>
             </div>
 
@@ -558,6 +604,9 @@ async function generateResume() {
 
             <div class="keywords">
                 KEYWORDS FOR ATS: Legal Technology, Software Engineering, Paralegal, Legal Research, Document Analysis, AI, React.js, Node.js, Java, Insurance Defense, Personal Injury, Medical Malpractice, Collections, Construction Defects, Litigation, Case Management, Trial Preparation, Discovery, Legal Documents, Compliance, Cybersecurity, DevOps, CI/CD, Agile, Scrum, Bilingual, Spanish, English
+            </div>
+            <div class="footer">
+                <div class="footer-title">Legal Professional & Software Engineer</div>
             </div>
         </div>
     </body>
