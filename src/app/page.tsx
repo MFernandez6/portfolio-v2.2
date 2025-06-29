@@ -212,7 +212,8 @@ export default function Home() {
                   Miguel Angel Fernandez
                 </h2>
                 <p className="text-lg sm:text-xl text-[#cccccc]">
-                  Legal Professional & Software Engineer
+                  <span className="block sm:inline">Legal Professional</span>
+                  <span className="block sm:inline">& Software Engineer</span>
                 </p>
                 <p className="text-base sm:text-lg text-[#bbbbbb]">
                   Miami-Dade County, Florida
@@ -395,12 +396,12 @@ export default function Home() {
               About the Contestant
             </h3>
             <p>
-              Bilingual legal tech specialist and software engineer with a
-              proven track record in both law and technology. Experienced in
-              leveraging AI and modern software to streamline legal workflows,
-              support high-stakes litigation, and deliver business value.
-              Passionate about bridging the gap between legal expertise and
-              innovative technology.
+              Bilingual Legal Professional and software engineer with a proven
+              track record in both law and technology. Experienced in leveraging
+              AI and modern software to streamline legal workflows, support
+              high-stakes litigation, and deliver business value. Passionate
+              about bridging the gap between legal expertise and innovative
+              technology.
             </p>
           </div>
           <div className="text-center">
