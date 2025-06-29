@@ -195,39 +195,45 @@ export default function Home() {
         {/* Main Jeopardy Card */}
         <div className="glass-card rounded-3xl border border-white/10 shadow-2xl backdrop-blur-xl overflow-hidden">
           {/* Jeopardy Header */}
-          <div className="bg-[#060ce9] p-8 text-center border-b-4 border-yellow-400">
-            <h1 className="text-6xl font-korinna text-yellow-400 tracking-wider mb-6 drop-shadow-lg animated-float">
+          <div className="bg-[#060ce9] p-4 sm:p-8 text-center border-b-4 border-yellow-400">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-korinna text-yellow-400 tracking-wider mb-4 sm:mb-6 drop-shadow-lg animated-float">
               JEOPARDY!
             </h1>
-            <div className="flex items-center justify-center gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4 sm:mb-6">
               <Image
                 src="/profile.jpeg"
                 alt="Miguel Angel Fernandez"
-                width={100}
-                height={100}
-                className="rounded-full border-4 border-yellow-400 object-cover shadow-xl"
+                width={80}
+                height={80}
+                className="rounded-full border-4 border-yellow-400 object-cover shadow-xl sm:w-[100px] sm:h-[100px]"
               />
-              <div className="text-left">
-                <h2 className="text-3xl font-korinna text-yellow-400 drop-shadow">
+              <div className="text-center sm:text-left">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-korinna text-yellow-400 drop-shadow">
                   Miguel Angel Fernandez
                 </h2>
-                <p className="text-xl text-[#cccccc]">
+                <p className="text-lg sm:text-xl text-[#cccccc]">
                   Legal Professional & Software Engineer
                 </p>
-                <p className="text-lg text-[#bbbbbb]">
+                <p className="text-base sm:text-lg text-[#bbbbbb]">
                   Miami-Dade County, Florida
                 </p>
               </div>
             </div>
             {/* Contact Info */}
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-4">
               <div className="group relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative flex items-center gap-3 bg-[#060ce9] px-6 py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-8 h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                    <MapPin size={16} className="text-yellow-400" />
+                <span className="relative flex items-center gap-2 sm:gap-3 bg-[#060ce9] px-4 sm:px-6 py-2 sm:py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
+                    <MapPin
+                      size={14}
+                      className="text-yellow-400 sm:w-4 sm:h-4"
+                    />
                   </div>
-                  Miami-Dade County, FL
+                  <span className="hidden sm:inline">
+                    Miami-Dade County, FL
+                  </span>
+                  <span className="sm:hidden">Miami-Dade, FL</span>
                 </span>
               </div>
 
@@ -235,12 +241,18 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <a
                   href="mailto:MiguelFernandez023@gmail.com"
-                  className="relative flex items-center gap-3 bg-[#060ce9] px-6 py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="relative flex items-center gap-2 sm:gap-3 bg-[#060ce9] px-4 sm:px-6 py-2 sm:py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                 >
-                  <div className="w-8 h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                    <Mail size={16} className="text-yellow-400" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
+                    <Mail size={14} className="text-yellow-400 sm:w-4 sm:h-4" />
                   </div>
-                  MiguelFernandez023@gmail.com
+                  <span className="hidden lg:inline">
+                    MiguelFernandez023@gmail.com
+                  </span>
+                  <span className="hidden sm:inline lg:hidden">
+                    MiguelFernandez023@...
+                  </span>
+                  <span className="sm:hidden">Email</span>
                 </a>
               </div>
 
@@ -248,26 +260,30 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <a
                   href="tel:17864173869"
-                  className="relative flex items-center gap-3 bg-[#060ce9] px-6 py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="relative flex items-center gap-2 sm:gap-3 bg-[#060ce9] px-4 sm:px-6 py-2 sm:py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm sm:text-base"
                 >
-                  <div className="w-8 h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                    <Phone size={16} className="text-yellow-400" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
+                    <Phone
+                      size={14}
+                      className="text-yellow-400 sm:w-4 sm:h-4"
+                    />
                   </div>
-                  (786) 417-3869
+                  <span className="hidden sm:inline">(786) 417-3869</span>
+                  <span className="sm:hidden">Call</span>
                 </a>
               </div>
             </div>
           </div>
 
           {/* Jeopardy Board */}
-          <div className="p-8 bg-[#060ce9]">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="p-4 sm:p-8 bg-[#060ce9]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {categories.map((category, categoryIndex) => (
-                <div key={categoryIndex} className="space-y-4">
+                <div key={categoryIndex} className="space-y-3 sm:space-y-4">
                   {/* Category Header */}
-                  <Card className="bg-[#115ff4] text-center text-lg shadow-glow border-2 border-yellow-400">
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-yellow-400 font-bold">
+                  <Card className="bg-[#115ff4] text-center text-base sm:text-lg shadow-glow border-2 border-yellow-400">
+                    <CardHeader className="pb-2 sm:pb-3 px-3 sm:px-6">
+                      <CardTitle className="text-yellow-400 font-bold text-sm sm:text-base">
                         {category.name}
                       </CardTitle>
                     </CardHeader>
@@ -286,11 +302,11 @@ export default function Home() {
                           setIsModalOpen(true);
                         }}
                       >
-                        <CardContent className="p-4 text-center">
-                          <div className="text-yellow-400 text-2xl font-bold mb-2 drop-shadow">
+                        <CardContent className="p-3 sm:p-4 text-center">
+                          <div className="text-yellow-400 text-xl sm:text-2xl font-bold mb-1 sm:mb-2 drop-shadow">
                             ${item.points}
                           </div>
-                          <div className="text-white text-sm font-semibold mb-1 group-hover:text-yellow-300 transition-colors">
+                          <div className="text-white text-xs sm:text-sm font-semibold mb-1 group-hover:text-yellow-300 transition-colors">
                             {item.content}
                           </div>
                           <div className="text-blue-200 text-xs opacity-90 mb-1">
@@ -315,47 +331,50 @@ export default function Home() {
           </div>
 
           {/* Action Buttons Section */}
-          <div className="bg-[#060ce9] p-8 border-t-4 border-yellow-400">
+          <div className="bg-[#060ce9] p-4 sm:p-8 border-t-4 border-yellow-400">
             {/* Download Resume Section */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 sm:mb-8">
               <Button
                 asChild
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-lg px-8 py-3 shadow-glow transition-all duration-300"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3 shadow-glow transition-all duration-300"
               >
                 <a href="/resume.pdf" download>
-                  <Download className="h-5 w-5 mr-2" />
+                  <Download className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   Download Resume
                 </a>
               </Button>
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               <Button
                 asChild
-                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-yellow-400 hover:to-yellow-500 h-16 text-lg font-bold border-2 border-green-500 glassy-card transition-all duration-300"
+                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-yellow-400 hover:to-yellow-500 h-12 sm:h-16 text-base sm:text-lg font-bold border-2 border-green-500 glassy-card transition-all duration-300"
               >
                 <a href="/projects">
-                  <ExternalLink className="h-5 w-5 mr-2" />
-                  View My Work
+                  <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  <span className="hidden sm:inline">View My Work</span>
+                  <span className="sm:hidden">Projects</span>
                 </a>
               </Button>
               <Button
                 asChild
-                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-purple-400 hover:to-purple-600 h-16 text-lg font-bold border-2 border-purple-500 glassy-card transition-all duration-300"
+                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-purple-400 hover:to-purple-600 h-12 sm:h-16 text-base sm:text-lg font-bold border-2 border-purple-500 glassy-card transition-all duration-300"
               >
                 <a href="/news">
-                  <ExternalLink className="h-5 w-5 mr-2" />
-                  Industry News
+                  <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  <span className="hidden sm:inline">Industry News</span>
+                  <span className="sm:hidden">News</span>
                 </a>
               </Button>
               <Button
                 asChild
-                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-red-400 hover:to-red-600 h-16 text-lg font-bold border-2 border-red-500 glassy-card transition-all duration-300"
+                className="bg-gradient-to-r from-blue-800 via-blue-900 to-blue-800 hover:from-red-400 hover:to-red-600 h-12 sm:h-16 text-base sm:text-lg font-bold border-2 border-red-500 glassy-card transition-all duration-300 sm:col-span-2 lg:col-span-1"
               >
                 <a href="mailto:MiguelFernandez023@gmail.com">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Contact Me
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  <span className="hidden sm:inline">Contact Me</span>
+                  <span className="sm:hidden">Contact</span>
                 </a>
               </Button>
             </div>

@@ -52,7 +52,7 @@ export default function Navbar() {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-yellow-400 drop-shadow-lg">
+              <h1 className="text-lg sm:text-xl font-bold text-yellow-400 drop-shadow-lg">
                 Miguel Angel Fernandez
               </h1>
               <p className="text-xs text-blue-200 font-medium">
