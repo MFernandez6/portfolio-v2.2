@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Miguel Angel Fernandez Portfolio",
     images: [
       {
-        url: "/profile.jpeg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
     description:
       "Bilingual legal tech specialist and software engineer with expertise in legal technology solutions, web development, and AI integration.",
-    images: ["/profile.jpeg"],
+    images: ["/og-image.png"],
     creator: "@miguelangelfernandez",
   },
   icons: {
