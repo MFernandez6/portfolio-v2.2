@@ -322,15 +322,26 @@ export default function Home() {
           <div className="bg-gradient-to-r from-slate-800 via-blue-800 to-slate-800 p-4 sm:p-8 border-t-4 border-yellow-400">
             {/* Download Resume Section */}
             <div className="text-center mb-6 sm:mb-8">
-              <Button
-                asChild
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3 shadow-glow transition-all duration-300"
-              >
-                <a href="/resume.pdf" download>
-                  <Download className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                  Download Resume
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  asChild
+                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3 shadow-glow transition-all duration-300"
+                >
+                  <a href="/resume.pdf" download>
+                    <Download className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                    General Resume
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3 shadow-glow transition-all duration-300"
+                >
+                  <a href="/insurance-resume.pdf" download>
+                    <Download className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                    Insurance Resume
+                  </a>
+                </Button>
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               <Button
