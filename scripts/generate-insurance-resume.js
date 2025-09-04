@@ -35,7 +35,7 @@ async function generateInsuranceResume() {
                 max-width: 800px;
                 margin: 0 auto;
                 padding: 20px;
-                background: linear-gradient(135deg, #ffffff, #f8fafc);
+                background: white;
                 border-radius: 12px;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
                 position: relative;
@@ -122,7 +122,7 @@ async function generateInsuranceResume() {
                 padding-bottom: 6px;
                 border-bottom: 2px solid #e2e8f0;
                 position: relative;
-                background: linear-gradient(90deg, #f8fafc, #ffffff);
+                background: white;
                 padding: 8px 12px;
                 border-radius: 6px 6px 0 0;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -154,7 +154,7 @@ async function generateInsuranceResume() {
             }
             
             .skill-category {
-                background: linear-gradient(135deg, #f8fafc, #ffffff);
+                background: white;
                 padding: 10px;
                 border-radius: 8px;
                 border-left: 4px solid #1e40af;
@@ -180,7 +180,7 @@ async function generateInsuranceResume() {
             .job {
                 margin-bottom: 12px;
                 padding: 12px;
-                background: linear-gradient(135deg, #f8fafc, #ffffff);
+                background: white;
                 border-radius: 8px;
                 border-left: 4px solid #1e40af;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -247,7 +247,7 @@ async function generateInsuranceResume() {
             }
             
             .education-item {
-                background: linear-gradient(135deg, #f0fdf4, #ffffff);
+                background: white;
                 padding: 8px;
                 border-radius: 6px;
                 border-left: 3px solid #10b981;
