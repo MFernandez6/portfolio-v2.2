@@ -24,8 +24,8 @@ async function generateInsuranceResume() {
             
             body {
                 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                font-size: 9px;
-                line-height: 1.35;
+                font-size: 10px;
+                line-height: 1.4;
                 color: #000000;
                 background: white;
                 padding: 0;
@@ -72,7 +72,7 @@ async function generateInsuranceResume() {
             }
             
             .name {
-                font-size: 24px;
+                font-size: 26px;
                 font-weight: 800;
                 color: #000000;
                 margin-bottom: 4px;
@@ -81,7 +81,7 @@ async function generateInsuranceResume() {
             }
             
             .title {
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: 600;
                 color: #000000;
                 margin-bottom: 6px;
@@ -94,7 +94,7 @@ async function generateInsuranceResume() {
                 justify-content: center;
                 gap: 10px;
                 flex-wrap: wrap;
-                font-size: 9px;
+                font-size: 10px;
                 color: #000000;
             }
             
@@ -109,7 +109,7 @@ async function generateInsuranceResume() {
             }
             
             .section-title {
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: 800;
                 color: #000000;
                 text-transform: uppercase;
@@ -159,7 +159,7 @@ async function generateInsuranceResume() {
             }
             
             .skill-category h4 {
-                font-size: 8px;
+                font-size: 9px;
                 font-weight: 700;
                 color: #000000;
                 margin-bottom: 3px;
@@ -168,7 +168,7 @@ async function generateInsuranceResume() {
             }
             
             .skill-list {
-                font-size: 8px;
+                font-size: 9px;
                 color: #000000;
                 line-height: 1.3;
             }
@@ -191,27 +191,27 @@ async function generateInsuranceResume() {
             }
             
             .job-title {
-                font-size: 10px;
-                font-weight: 700;
+                font-size: 11px;
+                font-weight: 600;
                 color: #000000;
                 margin-bottom: 2px;
             }
             
             .job-company {
-                font-size: 8px;
+                font-size: 9px;
                 font-weight: 500;
                 color: #000000;
             }
             
             .job-dates {
-                font-size: 7px;
+                font-size: 8px;
                 color: #000000;
                 font-weight: 700;
                 white-space: nowrap;
             }
             
             .job-description {
-                font-size: 8px;
+                font-size: 9px;
                 color: #000000;
                 line-height: 1.35;
             }
@@ -252,31 +252,20 @@ async function generateInsuranceResume() {
             }
             
             .education-title {
-                font-size: 8px;
-                font-weight: 700;
+                font-size: 9px;
+                font-weight: 600;
                 color: #000000;
-                margin-bottom: 2px;
+                margin-bottom: 3px;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
             }
             
-            .education-school {
-                font-size: 6px;
-                color: #000000;
-                font-weight: 500;
-                margin-bottom: 2px;
-            }
+            .education-school { display: none; }
             
-            .education-dates {
-                font-size: 5px;
-                color: #000000;
-                font-weight: 700;
-                margin-bottom: 2px;
-            }
+            .education-dates { display: none; }
             
-            .education-details {
-                font-size: 5px;
-                color: #000000;
-                line-height: 1.2;
-            }
+            .education-details { display: none; }
+            .education-list { font-size: 9px; color: #000; line-height: 1.3; }
             
             .keywords {
                 font-size: 6px;
@@ -357,18 +346,13 @@ async function generateInsuranceResume() {
         <div class="container">
             <div class="header">
                 <div class="name">Miguel Angel Fernandez</div>
-                <div class="title">Insurance Claims Specialist & Legal Professional</div>
+                <div class="title">Licensed Claims Adjuster & Legal Professional</div>
                 <div class="contact-info">
                     <div class="contact-item">📍 Miami-Dade County, Florida</div>
                     <div class="contact-item">📧 MiguelFernandez023@gmail.com</div>
                     <div class="contact-item">📱 (786) 417-3869</div>
                     <div class="contact-item">🌐 MiguelAngelFernandez.com</div>
                 </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Licenses</div>
-                <div class="license-item">Florida 6-20 Adjuster License No. G279764</div>
             </div>
 
             <div class="section">
@@ -471,31 +455,31 @@ async function generateInsuranceResume() {
                 
                 <div class="education-grid">
                     <div class="education-item">
-                        <div class="education-title">AdjustPro Pre-Licensing Course</div>
+                        <div class="education-title">AdjustPro Pre-Licensing</div>
                         <div class="education-school">AdjustPro Training</div>
                         <div class="education-dates">Completed 2025</div>
-                        <div class="education-details">Florida Certified Adjuster Pre-Licensing Course - Fulfills DFS prerequisites for 6-20 Resident, 3-20 Public Adjuster, and 30-20 Public Adjuster Apprentice licenses.</div>
+                        <div class="education-list">Florida DFS-approved 40-hour course covering claims handling, coverage analysis, ethics, and Florida insurance statutes.</div>
                     </div>
 
                     <div class="education-item">
                         <div class="education-title">Associate of Science in Cybersecurity</div>
                         <div class="education-school">Miami Dade College</div>
                         <div class="education-dates">May 2024 - August 2025</div>
-                        <div class="education-details">Network Security, Digital Forensics, Incident Response, Risk Assessment</div>
+                        <div class="education-list">Focus: network security, digital forensics, incident response, and risk assessment.</div>
                     </div>
 
                     <div class="education-item">
                         <div class="education-title">Bachelor of Science in Political Science</div>
                         <div class="education-school">Florida State University</div>
                         <div class="education-dates">January 2009 - August 2011</div>
-                        <div class="education-details">American government, policy analysis, and regulatory frameworks</div>
+                        <div class="education-list">Emphasis on public policy analysis, governance, and regulatory frameworks.</div>
                     </div>
 
                     <div class="education-item">
                         <div class="education-title">Master of Science in Law and Policy</div>
                         <div class="education-school">Nova Southeastern University</div>
                         <div class="education-dates">September 2015 - September 2017</div>
-                        <div class="education-details">Magna Cum Laude; 3.78 GPA | Administrative Law, Federal Privacy Law, Regulatory Compliance</div>
+                        <div class="education-list">Coursework: administrative law, privacy law, and regulatory compliance.</div>
                     </div>
                 </div>
             </div>
@@ -521,6 +505,11 @@ async function generateInsuranceResume() {
                         <div class="skill-list">English (Fluent), Spanish (Fluent)</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">License(s)</div>
+                <div class="license-item">Florida 6-20 Adjuster License No. G279764</div>
             </div>
 
             <div class="footer">
