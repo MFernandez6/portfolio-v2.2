@@ -25,8 +25,8 @@ async function generateInsuranceResume() {
             body {
                 font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                 font-size: 9px;
-                line-height: 1.3;
-                color: #1a1a1a;
+                line-height: 1.35;
+                color: #000000;
                 background: white;
                 padding: 0;
             }
@@ -36,10 +36,10 @@ async function generateInsuranceResume() {
                 margin: 0 auto;
                 padding: 20px;
                 background: white;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                border-radius: 0;
+                box-shadow: none;
                 position: relative;
-                overflow: hidden;
+                overflow: visible;
             }
             
             .container::before {
@@ -48,58 +48,54 @@ async function generateInsuranceResume() {
                 top: 0;
                 left: 0;
                 right: 0;
-                height: 4px;
-                background: linear-gradient(90deg, #1e40af, #3b82f6, #1e40af);
+                height: 0;
+                background: none;
             }
             
             .header {
                 text-align: center;
-                margin-bottom: 15px;
+                margin-bottom: 12px;
                 position: relative;
             }
             
             .header::after {
                 content: '';
                 position: absolute;
-                bottom: -8px;
+                bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 80px;
-                height: 3px;
-                background: linear-gradient(90deg, #1e40af, #3b82f6, #1e40af);
-                border-radius: 2px;
-                box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
+                width: 0;
+                height: 0;
+                background: none;
+                border-radius: 0;
+                box-shadow: none;
             }
             
             .name {
-                font-size: 28px;
+                font-size: 24px;
                 font-weight: 800;
-                color: #1e293b;
-                margin-bottom: 6px;
-                letter-spacing: -0.8px;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                color: #000000;
+                margin-bottom: 4px;
+                letter-spacing: -0.5px;
+                text-shadow: none;
             }
             
             .title {
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 600;
-                color: #1e40af;
-                margin-bottom: 8px;
+                color: #000000;
+                margin-bottom: 6px;
                 text-transform: uppercase;
-                letter-spacing: 1px;
-                background: linear-gradient(90deg, #1e40af, #3b82f6);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+                letter-spacing: 0.8px;
             }
             
             .contact-info {
                 display: flex;
                 justify-content: center;
-                gap: 15px;
+                gap: 10px;
                 flex-wrap: wrap;
                 font-size: 9px;
-                color: #475569;
+                color: #000000;
             }
             
             .contact-item {
@@ -113,31 +109,31 @@ async function generateInsuranceResume() {
             }
             
             .section-title {
-                font-size: 12px;
-                font-weight: 700;
-                color: #1e293b;
+                font-size: 11px;
+                font-weight: 800;
+                color: #000000;
                 text-transform: uppercase;
-                letter-spacing: 1px;
-                margin-bottom: 10px;
-                padding-bottom: 6px;
-                border-bottom: 2px solid #e2e8f0;
+                letter-spacing: 0.8px;
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+                border-bottom: 1px solid #000000;
                 position: relative;
-                background: white;
-                padding: 8px 12px;
-                border-radius: 6px 6px 0 0;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                background: none;
+                padding: 0;
+                border-radius: 0;
+                box-shadow: none;
             }
             
             .section-title::after {
                 content: '';
                 position: absolute;
-                bottom: -2px;
-                left: 12px;
-                width: 30px;
-                height: 2px;
-                background: linear-gradient(90deg, #1e40af, #3b82f6);
-                border-radius: 1px;
-                box-shadow: 0 1px 2px rgba(30, 64, 175, 0.3);
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                background: none;
+                border-radius: 0;
+                box-shadow: none;
             }
             
             .summary {
@@ -154,18 +150,18 @@ async function generateInsuranceResume() {
             }
             
             .skill-category {
-                background: white;
-                padding: 10px;
-                border-radius: 8px;
-                border-left: 4px solid #1e40af;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-                transition: all 0.3s ease;
+                background: none;
+                padding: 0;
+                border-radius: 0;
+                border-left: none;
+                box-shadow: none;
+                transition: none;
             }
             
             .skill-category h4 {
                 font-size: 8px;
-                font-weight: 600;
-                color: #1e293b;
+                font-weight: 700;
+                color: #000000;
                 margin-bottom: 3px;
                 text-transform: uppercase;
                 letter-spacing: 0.3px;
@@ -173,18 +169,18 @@ async function generateInsuranceResume() {
             
             .skill-list {
                 font-size: 8px;
-                color: #64748b;
-                line-height: 1.2;
+                color: #000000;
+                line-height: 1.3;
             }
             
             .job {
-                margin-bottom: 12px;
-                padding: 12px;
-                background: white;
-                border-radius: 8px;
-                border-left: 4px solid #1e40af;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-                transition: all 0.3s ease;
+                margin-bottom: 10px;
+                padding: 0;
+                background: none;
+                border-radius: 0;
+                border-left: none;
+                box-shadow: none;
+                transition: none;
             }
             
             .job-header {
@@ -196,33 +192,33 @@ async function generateInsuranceResume() {
             
             .job-title {
                 font-size: 10px;
-                font-weight: 600;
-                color: #1e293b;
+                font-weight: 700;
+                color: #000000;
                 margin-bottom: 2px;
             }
             
             .job-company {
                 font-size: 8px;
                 font-weight: 500;
-                color: #1e40af;
+                color: #000000;
             }
             
             .job-dates {
                 font-size: 7px;
-                color: #64748b;
+                color: #000000;
                 font-weight: 700;
                 white-space: nowrap;
             }
             
             .job-description {
                 font-size: 8px;
-                color: #475569;
-                line-height: 1.3;
+                color: #000000;
+                line-height: 1.35;
             }
             
             .job-description ul {
-                list-style: none;
-                padding-left: 0;
+                list-style: disc;
+                padding-left: 14px;
             }
             
             .job-description li {
@@ -232,12 +228,12 @@ async function generateInsuranceResume() {
             }
             
             .job-description li::before {
-                content: '▸';
-                position: absolute;
-                left: 0;
-                color: #1e40af;
-                font-weight: bold;
-                font-size: 7px;
+                content: '';
+                position: static;
+                left: auto;
+                color: #000000;
+                font-weight: normal;
+                font-size: 0;
             }
             
             .education-grid {
@@ -247,49 +243,56 @@ async function generateInsuranceResume() {
             }
             
             .education-item {
-                background: white;
-                padding: 8px;
-                border-radius: 6px;
-                border-left: 3px solid #10b981;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-                transition: all 0.3s ease;
+                background: none;
+                padding: 0;
+                border-radius: 0;
+                border-left: none;
+                box-shadow: none;
+                transition: none;
             }
             
             .education-title {
                 font-size: 8px;
-                font-weight: 600;
-                color: #1e293b;
+                font-weight: 700;
+                color: #000000;
                 margin-bottom: 2px;
             }
             
             .education-school {
                 font-size: 6px;
-                color: #1e40af;
+                color: #000000;
                 font-weight: 500;
                 margin-bottom: 2px;
             }
             
             .education-dates {
                 font-size: 5px;
-                color: #64748b;
+                color: #000000;
                 font-weight: 700;
                 margin-bottom: 2px;
             }
             
             .education-details {
                 font-size: 5px;
-                color: #475569;
-                line-height: 1.1;
+                color: #000000;
+                line-height: 1.2;
             }
             
             .keywords {
                 font-size: 6px;
-                color: #94a3b8;
+                color: #000000;
                 margin-top: 15px;
                 padding-top: 8px;
-                border-top: 1px solid #e2e8f0;
+                border-top: 1px solid #000000;
                 text-align: center;
                 line-height: 1.2;
+            }
+
+            .license-item {
+                font-size: 9px;
+                color: #000000;
+                font-weight: 700;
+                margin-bottom: 8px;
             }
             
             .links-bar {
@@ -298,43 +301,43 @@ async function generateInsuranceResume() {
                 gap: 18px;
                 margin-bottom: 8px;
                 font-size: 9px;
-                color: #1e40af;
+                color: #000000;
                 font-weight: 500;
                 flex-wrap: wrap;
             }
             .links-bar a {
-                color: #1e40af;
+                color: #000000;
                 text-decoration: none;
-                border-bottom: 1px dotted #1e40af;
+                border-bottom: 1px dotted #000000;
                 transition: color 0.2s;
             }
             .links-bar a:hover {
-                color: #1e293b;
-                border-bottom: 1px solid #1e293b;
+                color: #000000;
+                border-bottom: 1px solid #000000;
             }
             .footer {
                 text-align: center;
                 font-size: 8px;
-                color: #64748b;
+                color: #000000;
                 margin-top: 18px;
-                border-top: 1px solid #e2e8f0;
+                border-top: 1px solid #000000;
                 padding-top: 6px;
             }
             .footer .footer-title {
                 font-weight: 600;
-                color: #1e293b;
+                color: #000000;
                 margin-bottom: 2px;
             }
             .footer .footer-link {
-                color: #1e40af;
+                color: #000000;
                 text-decoration: none;
-                border-bottom: 1px dotted #1e40af;
+                border-bottom: 1px dotted #000000;
                 margin-left: 6px;
                 font-weight: 500;
             }
             .footer .footer-link:hover {
-                color: #1e293b;
-                border-bottom: 1px solid #1e293b;
+                color: #000000;
+                border-bottom: 1px solid #000000;
             }
             
             @media print {
@@ -344,7 +347,7 @@ async function generateInsuranceResume() {
                 .container {
                     padding: 15px;
                 }
-                .job, .education-item, .skill-category {
+                .job, .education-item, .skill-category, .license-item {
                     break-inside: avoid;
                 }
             }
@@ -363,7 +366,10 @@ async function generateInsuranceResume() {
                 </div>
             </div>
 
-
+            <div class="section">
+                <div class="section-title">Licenses</div>
+                <div class="license-item">Florida 6-20 Adjuster License No. G279764</div>
+            </div>
 
             <div class="section">
                 <div class="section-title">Insurance & Legal Experience</div>
