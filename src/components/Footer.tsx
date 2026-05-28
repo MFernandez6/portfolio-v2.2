@@ -1,258 +1,116 @@
 "use client";
+
 import {
   Mail,
   Phone,
   MapPin,
   Download,
-  Globe,
-  Newspaper,
   Briefcase,
+  Newspaper,
 } from "lucide-react";
 import Link from "next/link";
+import { profile } from "@/data/profile";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/95 to-blue-900/90"></div>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-blue-400/10 rounded-full blur-lg animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400/5 rounded-full blur-md animate-pulse delay-500"></div>
-      </div>
-
-      <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
-          {/* Top Section with Glassmorphism Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {/* Brand Section */}
-            <div className="lg:col-span-2">
-              <div className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-xl sm:text-2xl font-bold text-blue-900">
-                      M
-                    </span>
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="text-xl sm:text-2xl font-bold text-yellow-400 drop-shadow-lg">
-                      Miguel Angel Fernandez
-                    </h3>
-                    <p className="text-blue-200 font-medium text-sm sm:text-base">
-                      Legal Professional & Software Engineer
-                    </p>
-                    <a
-                      href="https://www.linkedin.com/in/miguelfernandez023/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-2 text-blue-300 hover:text-yellow-400 transition-colors text-sm"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                      linkedin.com/in/miguelfernandez023
-                    </a>
-                  </div>
-                </div>
-
-                <p className="text-blue-100 leading-relaxed mb-6 text-sm sm:text-base">
-                  Bridging the gap between legal expertise and innovative
-                  technology. Delivering cutting-edge legal tech solutions,
-                  enterprise web development, and advanced cybersecurity
-                  strategies.
-                </p>
-
-                <div className="flex flex-wrap justify-center gap-1 sm:gap-2 lg:gap-3">
-                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
-                    Legal Tech
-                  </div>
-                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
-                    Web Development
-                  </div>
-                  <div className="px-1 sm:px-3 lg:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50 text-blue-200 text-xs sm:text-sm font-medium">
-                    AI Integration
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Section */}
-            <div className="glass-card p-4 sm:p-6 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl">
-              <h4 className="text-lg sm:text-xl font-bold text-yellow-400 mb-4 sm:mb-6 flex items-center gap-2">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                  <Phone size={14} className="text-yellow-400 sm:w-4 sm:h-4" />
-                </div>
-                Contact
-              </h4>
-
-              <div className="space-y-3 sm:space-y-4">
-                <a
-                  href="mailto:MiguelFernandez023@gmail.com"
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <Mail size={14} className="text-blue-200 sm:w-4 sm:h-4" />
-                  </div>
-                  <div>
-                    <p className="text-blue-200 font-medium text-xs sm:text-sm">
-                      Email
-                    </p>
-                    <p className="text-blue-300 text-xs">
-                      MiguelFernandez023@gmail.com
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  href="tel:17864173869"
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <Phone size={14} className="text-blue-200 sm:w-4 sm:h-4" />
-                  </div>
-                  <div>
-                    <p className="text-blue-200 font-medium text-xs sm:text-sm">
-                      Phone
-                    </p>
-                    <p className="text-blue-300 text-xs">(786) 417-3869</p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600/30 rounded-lg flex items-center justify-center">
-                    <MapPin size={14} className="text-blue-200 sm:w-4 sm:h-4" />
-                  </div>
-                  <div>
-                    <p className="text-blue-200 font-medium text-xs sm:text-sm">
-                      Location
-                    </p>
-                    <p className="text-blue-300 text-xs">
-                      Miami-Dade County, FL
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Links Section */}
-            <div className="glass-card p-4 sm:p-6 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl">
-              <h4 className="text-lg sm:text-xl font-bold text-yellow-400 mb-4 sm:mb-6 flex items-center gap-2">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                  <Globe size={14} className="text-yellow-400 sm:w-4 sm:h-4" />
-                </div>
-                Navigation
-              </h4>
-
-              <div className="space-y-2 sm:space-y-3">
-                <Link
-                  href="/"
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <span className="text-blue-200 text-xs sm:text-sm font-bold">
-                      H
-                    </span>
-                  </div>
-                  <span className="text-blue-200 font-medium text-xs sm:text-sm">
-                    Home
+    <footer className="relative mt-16 border-t border-meadow-200/60 bg-gradient-to-b from-transparent via-paper-50/80 to-meadow-100/40 backdrop-blur-sm pb-16 sm:pb-[4.5rem]">
+      <div className="max-w-6xl mx-auto px-6 py-14 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <h3 className="font-display text-2xl text-forest-900 mb-2">
+              {profile.name}
+            </h3>
+            <p className="text-forest-700/85 text-sm leading-relaxed mb-4">
+              {profile.tagline}
+            </p>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-terracotta-500 hover:text-terracotta-400 transition-colors"
+            >
+              LinkedIn →
+            </a>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {["Claims Adjusting", "Legal Tech", "Cybersecurity"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full bg-paper-50/50 text-forest-700 text-xs border border-meadow-200/80"
+                  >
+                    {tag}
                   </span>
-                </Link>
-
-                <Link
-                  href="/projects"
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <Briefcase
-                      size={14}
-                      className="text-blue-200 sm:w-4 sm:h-4"
-                    />
-                  </div>
-                  <span className="text-blue-200 font-medium text-xs sm:text-sm">
-                    Projects
-                  </span>
-                </Link>
-
-                <Link
-                  href="/news"
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <Newspaper
-                      size={14}
-                      className="text-blue-200 sm:w-4 sm:h-4"
-                    />
-                  </div>
-                  <span className="text-blue-200 font-medium text-xs sm:text-sm">
-                    News
-                  </span>
-                </Link>
-
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="group flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl bg-blue-700/20 border border-blue-600/30 hover:bg-blue-600/30 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-600/30 rounded-lg flex items-center justify-center group-hover:bg-blue-500/40 transition-colors">
-                    <Download
-                      size={14}
-                      className="text-blue-200 sm:w-4 sm:h-4"
-                    />
-                  </div>
-                  <span className="text-blue-200 font-medium text-xs sm:text-sm">
-                    Resume
-                  </span>
-                </a>
-              </div>
+                )
+              )}
             </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
-              <div className="text-center lg:text-left">
-                <p className="text-blue-200 font-medium text-sm sm:text-base">
-                  © 2024 Miguel Angel Fernandez.
-                </p>
-                <p className="text-blue-200 font-medium text-sm sm:text-base">
-                  All rights reserved.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                <div className="flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 bg-blue-700/30 rounded-full border border-blue-600/50">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-blue-200 text-xs sm:text-sm font-medium">
-                    Available for Projects
-                  </span>
-                </div>
-
-                <div className="text-center">
-                  <p className="text-blue-300 text-xs sm:text-sm font-medium">
-                    Built with
-                  </p>
-                  <div className="flex items-center gap-1 sm:gap-2 mt-1">
-                    <span className="px-2 py-1 bg-blue-600/30 rounded text-blue-200 text-xs">
-                      Next.js
-                    </span>
-                    <span className="px-2 py-1 bg-blue-600/30 rounded text-blue-200 text-xs">
-                      TypeScript
-                    </span>
-                    <span className="px-2 py-1 bg-blue-600/30 rounded text-blue-200 text-xs">
-                      Tailwind
-                    </span>
-                  </div>
-                </div>
-              </div>
+          <div>
+            <h4 className="font-display text-lg text-forest-900 mb-4">Contact</h4>
+            <div className="space-y-3 text-sm">
+              <a
+                href={`mailto:${profile.email}`}
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Mail size={16} className="text-terracotta-400 shrink-0" />
+                {profile.email}
+              </a>
+              <a
+                href={`tel:${profile.phone.replace(/\D/g, "")}`}
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Phone size={16} className="text-terracotta-400 shrink-0" />
+                {profile.phone}
+              </a>
+              <p className="flex items-center gap-2 text-forest-700/80">
+                <MapPin size={16} className="text-terracotta-400 shrink-0" />
+                {profile.location}
+              </p>
             </div>
           </div>
+
+          <div>
+            <h4 className="font-display text-lg text-forest-900 mb-4">Explore</h4>
+            <div className="space-y-2 text-sm">
+              <Link
+                href="/projects"
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Briefcase size={16} className="text-meadow-500" />
+                Projects
+              </Link>
+              <Link
+                href="/news"
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Newspaper size={16} className="text-meadow-500" />
+                News
+              </Link>
+              <a
+                href="/insurance-resume.pdf"
+                download
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Download size={16} className="text-meadow-500" />
+                Insurance Resume
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="flex items-center gap-2 text-forest-700 hover:text-forest-900 transition-colors"
+              >
+                <Download size={16} className="text-meadow-500" />
+                General Resume
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-meadow-200/50 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-forest-700/60">
+          <p>
+            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+          </p>
+          <p className="text-xs tracking-wide">✦ Built with care in Florida ✦</p>
         </div>
       </div>
     </footer>

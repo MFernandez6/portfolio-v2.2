@@ -1,265 +1,166 @@
 "use client";
-import React from "react";
+
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Github,
   Globe,
-  Code,
   Shield,
   Mail,
   Download,
   User,
   Heart,
+  ArrowLeft,
+  Building2,
+  Scale,
+  type LucideIcon,
 } from "lucide-react";
+import PaperCard from "@/components/ghibli/PaperCard";
+import SectionHeading from "@/components/ghibli/SectionHeading";
+import { projects, type ProjectIcon } from "@/data/projects";
+import { profile } from "@/data/profile";
 
-const projects = [
-  {
-    title: "Fernandez Public Adjusters",
-    description:
-      "Professional public adjusting firm website helping policyholders maximize insurance claim settlements. Features modern design, contact forms, service pages, blog section, and SEO optimization.",
-    technologies: [
-      "Next.js 14",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "Lucide React",
-    ],
-    image: "/fpa-logo.svg",
-    liveUrl: "https://www.fernandezpublicadjusters.com",
-    githubUrl: "https://github.com/MFernandez6/public-adjusters-v1",
-    category: "Legal Services",
-    icon: Shield,
-  },
-  {
-    title: "ClaimSaver+",
-    description:
-      "Legal tech platform for accident recovery and claim filing. Features user-friendly accident form submission, attorney matching, secure document management, and real-time case updates.",
-    technologies: [
-      "Next.js 14",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "React Hook Form",
-    ],
-    image: "/long-logo-ClaimSaver.jpg",
-    liveUrl: "https://www.claimsaverplus.com",
-    githubUrl: "https://github.com/MFernandez6/claimsaver-v2",
-    category: "Legal Technology",
-    icon: Shield,
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "Professional portfolio website showcasing legal and software engineering expertise. Features modern design, project showcase, news aggregation, and responsive layout.",
-    technologies: [
-      "Next.js 14",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "Lucide React",
-    ],
-    image: "/portfolio.jpg",
-    liveUrl: "https://www.miguelangelfernandez.com",
-    githubUrl: "https://github.com/MFernandez6/portfolio-v2.2",
-    category: "Personal Portfolio",
-    icon: User,
-  },
-  {
-    title: "Needle & Knead",
-    description:
-      "Professional massage therapy business website with modern design, service listings, appointment booking, and client testimonials.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js"],
-    image: "/logo-PNG.png",
-    liveUrl: "https://www.needleandknead.net",
-    githubUrl: "https://github.com/MFernandez6/knead-n-needles",
-    category: "Business Website",
-    icon: Heart,
-  },
-];
+const iconMap: Record<ProjectIcon, LucideIcon> = {
+  shield: Shield,
+  building: Building2,
+  user: User,
+  heart: Heart,
+  scale: Scale,
+};
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Background with animated elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-40 right-40 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 left-1/3 w-24 h-24 bg-yellow-400/8 rounded-full blur-xl animate-pulse delay-500"></div>
-      </div>
+    <div className="ghibli-page-section">
+      <div className="ghibli-container">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-forest-700/80 hover:text-forest-900 text-sm mb-8 transition-colors"
+        >
+          <ArrowLeft size={16} />
+          Back home
+        </Link>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
-              <Code className="h-6 w-6 text-slate-900" />
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-yellow-400 drop-shadow-lg">
-              My Projects
-            </h1>
-          </div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-            Explore my portfolio of projects showcasing expertise in web
-            development, legal technology, and innovative solutions. Each
-            project demonstrates technical skills, problem-solving abilities,
-            and attention to detail.
-          </p>
-        </div>
+        <SectionHeading subtitle="Tools and sites built at the intersection of law, insurance, and technology.">
+          Projects
+        </SectionHeading>
 
-        {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {projects.map((project, index) => {
-            const IconComponent = project.icon;
+            const IconComponent = iconMap[project.icon];
+            const imageFit = project.imageFit ?? "cover";
+
             return (
-              <div
-                key={index}
-                className="group relative animated-fadein"
-                style={{ animationDelay: `${index * 0.2}s` }}
+              <PaperCard
+                key={project.title}
+                delay={index * 0.08}
+                className="overflow-hidden group"
               >
-                <Card
-                  className="relative bg-gradient-to-br from-slate-800 to-slate-900 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
-                  onClick={() =>
-                    window.open(
-                      project.liveUrl,
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                >
-                  {/* Project Header */}
-                  <CardHeader className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 border-b border-white/10">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                        <IconComponent className="h-5 w-5 text-yellow-400" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-yellow-400 text-2xl font-bold">
-                          {project.title}
-                        </CardTitle>
-                        <p className="text-slate-400 text-sm font-medium">
-                          {project.category}
-                        </p>
-                      </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-meadow-100 flex items-center justify-center">
+                      <IconComponent className="h-5 w-5 text-forest-800" />
                     </div>
-                  </CardHeader>
-
-                  {/* Project Content */}
-                  <CardContent className="p-6">
-                    {/* Project Image */}
-                    <div className="relative h-48 w-full overflow-hidden rounded-lg mb-6">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className={`transition-transform duration-300 group-hover:scale-105 ${
-                          project.title === "Needle & Knead"
-                            ? "object-contain p-4 bg-white"
-                            : "object-cover"
-                        }`}
-                      />
-                      {project.title !== "Needle & Knead" && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                      )}
+                    <div>
+                      <h3 className="font-display text-xl text-forest-900">
+                        {project.title}
+                      </h3>
+                      <p className="text-terracotta-500 text-xs font-medium uppercase tracking-wider">
+                        {project.category}
+                      </p>
                     </div>
+                  </div>
 
-                    <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                      {project.description}
-                    </p>
+                  <div className="relative h-44 w-full overflow-hidden rounded-xl mb-4 border border-paper-300 bg-paper-100/50">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className={`transition-transform duration-500 group-hover:scale-105 ${
+                        imageFit === "contain"
+                          ? "object-contain p-4"
+                          : "object-cover"
+                      }`}
+                    />
+                  </div>
 
-                    {/* Technologies */}
-                    <div className="mb-6">
-                      <h4 className="text-yellow-400 font-semibold mb-3">
-                        Technologies Used:
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="bg-slate-700/50 text-slate-300 px-3 py-1 rounded-full text-sm border border-slate-600"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <p className="text-forest-700/80 text-sm leading-relaxed mb-4">
+                    {project.description}
+                  </p>
 
-                    {/* Action Buttons */}
-                    <div
-                      className="flex gap-3"
-                      onClick={(e) => e.stopPropagation()}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 rounded-full bg-meadow-50 text-forest-700 text-xs border border-meadow-100"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`ghibli-btn-primary inline-flex justify-center items-center gap-2 py-2 text-sm ${
+                        project.githubUrl ? "flex-1" : "w-full"
+                      }`}
                     >
-                      <Button
-                        asChild
-                        className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold flex-1"
+                      <Globe className="h-4 w-4" />
+                      Live Site
+                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ghibli-btn-soft flex-1 inline-flex justify-center items-center gap-2 py-2 text-sm"
                       >
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Globe className="h-4 w-4 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-slate-900 font-bold"
-                      >
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Github className="h-4 w-4 mr-2" />
-                          Code
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+                        <Github className="h-4 w-4" />
+                        Code
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </PaperCard>
             );
           })}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl border border-yellow-400/30 p-8">
-            <h2 className="text-3xl font-bold text-yellow-400 mb-4">
-              Ready to Collaborate?
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <PaperCard className="p-10 max-w-2xl mx-auto">
+            <h2 className="font-display text-2xl text-forest-900 mb-3">
+              Interested in collaborating?
             </h2>
-            <p className="text-slate-300 text-lg mb-6 max-w-2xl mx-auto">
-              I&apos;m always interested in new opportunities and exciting
-              projects. Whether you need a website, legal tech solution, or
-              innovative software development, let&apos;s discuss how I can help
-              bring your vision to life.
+            <p className="text-forest-700/80 mb-6">
+              I build at the crossroads of insurance, law, and software.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold px-8 py-3"
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href={`mailto:${profile.email}`}
+                className="ghibli-btn-primary inline-flex items-center gap-2 px-6 py-2.5"
               >
-                <a href="mailto:MiguelFernandez023@gmail.com">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Get In Touch
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-slate-900 font-bold px-8 py-3"
+                <Mail className="h-4 w-4" />
+                Get in Touch
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="ghibli-btn-soft inline-flex items-center gap-2 px-6 py-2.5"
               >
-                <a href="/resume.pdf" download>
-                  <Download className="h-5 w-5 mr-2" />
-                  Download Resume
-                </a>
-              </Button>
+                <Download className="h-4 w-4" />
+                Resume
+              </a>
             </div>
-          </div>
-        </div>
+          </PaperCard>
+        </motion.div>
       </div>
     </div>
   );

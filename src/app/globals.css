@@ -1,16 +1,44 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Import ITC Korinna font - using a similar alternative */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap");
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-cormorant);
   --font-mono: var(--font-geist-mono);
+
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #dceefb;
+  --color-sky-200: #b8ddf5;
+  --color-sky-300: #8ecae8;
+  --color-sky-400: #6bb5e0;
+  --color-meadow-50: #f2f9f4;
+  --color-meadow-100: #e3f0e7;
+  --color-meadow-200: #c5deb8;
+  --color-meadow-400: #7cb87c;
+  --color-meadow-500: #5a9a6a;
+  --color-forest-600: #4a7c59;
+  --color-forest-700: #3d5a45;
+  --color-forest-800: #2f4a38;
+  --color-forest-900: #1e3328;
+  --color-paper-50: #faf7f0;
+  --color-paper-100: #f5f0e6;
+  --color-paper-200: #efe6d6;
+  --color-paper-300: #e8dfd0;
+  --color-terracotta-400: #c97b63;
+  --color-terracotta-500: #b86a52;
+  --color-gold-300: #f5e6b8;
+  --color-gold-400: #edd9a3;
+  --color-twilight-400: #9ba8c4;
+
+  --shadow-paper: 0 4px 24px -4px rgba(30, 51, 40, 0.1),
+    0 2px 8px -2px rgba(30, 51, 40, 0.05);
+  --shadow-soft: 0 12px 40px -12px rgba(74, 124, 89, 0.2);
+  --shadow-glow: 0 0 40px -8px rgba(255, 248, 220, 0.5);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -47,72 +75,15 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --radius: 1rem;
+  --background: transparent;
+  --foreground: #1e3328;
+  --card: rgba(250, 247, 240, 0.88);
+  --card-foreground: #1e3328;
+  --primary: #4a7c59;
+  --primary-foreground: #faf7f0;
+  --border: rgba(232, 223, 208, 0.9);
+  --ring: #5a9a6a;
 }
 
 @layer base {
@@ -120,76 +91,131 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-forest-900 antialiased;
+    font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+    background: transparent;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: rgba(123, 184, 124, 0.35);
+    color: #1e3328;
   }
 }
 
-body {
-  min-height: 100vh;
-  font-family: "Geist", "Inter", "Sora", ui-sans-serif, system-ui, sans-serif;
-  background: #0066cc;
-  color: var(--color-foreground);
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
 }
 
-/* ITC Korinna-style font class */
-.font-korinna {
-  font-family: "Playfair Display", serif;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+/* Subtle paper grain */
+.paper-texture::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(12px);
-  border-radius: 1.25rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+html {
+  scroll-behavior: smooth;
 }
 
+/* Shared page rhythm */
+.ghibli-container {
+  @apply max-w-6xl mx-auto w-full px-6;
+}
+
+.ghibli-page-section {
+  @apply relative py-16 sm:py-20;
+}
+
+/* Watercolor storybook card — translucent so sky shows through */
+.ghibli-card,
+.glass-card,
 .glassy-card {
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  background: linear-gradient(
+    145deg,
+    rgba(250, 247, 240, 0.78) 0%,
+    rgba(245, 240, 230, 0.72) 50%,
+    rgba(240, 235, 225, 0.75) 100%
+  );
+  border: 1px solid rgba(74, 124, 89, 0.12);
+  box-shadow: var(--shadow-paper);
   backdrop-filter: blur(12px);
   border-radius: 1.25rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-  transition: all 0.3s ease;
 }
 
+.ghibli-card:hover,
+.glass-card:hover,
 .glassy-card:hover {
-  box-shadow: 0 0 16px 2px #ffe066;
-  transform: scale(1.05);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(74, 124, 89, 0.2);
 }
 
-.glassy-header {
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(12px);
-  border-radius: 1.25rem;
-  border: 2px solid #ffe066;
-  color: #ffe066;
-  font-weight: bold;
-  box-shadow: 0 0 16px 2px #ffe066;
+/* Primary action — warm terracotta like Ghibli accent */
+.ghibli-btn-primary {
+  @apply rounded-full font-medium shadow-md transition-all duration-300;
+  background: linear-gradient(135deg, #c97b63 0%, #b86a52 100%);
+  color: #faf7f0;
+}
+.ghibli-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -6px rgba(201, 123, 99, 0.45);
 }
 
-.animated-fadein {
-  animation: fadeIn 1s ease-in;
+.ghibli-btn-soft {
+  @apply rounded-full font-medium transition-all duration-300;
+  background: rgba(250, 247, 240, 0.75);
+  border: 1px solid rgba(74, 124, 89, 0.22);
+  color: #2f4a38;
+  backdrop-filter: blur(8px);
+}
+.ghibli-btn-soft:hover {
+  background: rgba(227, 240, 231, 0.85);
+  border-color: rgba(74, 124, 89, 0.35);
 }
 
-.animated-float {
-  animation: float 3s ease-in-out infinite;
+/* Hero portrait — organic Ghibli frame */
+.ghibli-portrait-frame {
+  position: relative;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 252, 240, 0.95),
+    rgba(237, 217, 163, 0.7),
+    rgba(123, 184, 124, 0.5)
+  );
+  box-shadow:
+    var(--shadow-soft),
+    0 0 0 1px rgba(255, 255, 255, 0.5),
+    var(--shadow-glow);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+.ghibli-portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(90, 154, 106, 0.25);
+  animation: spin-slow 40s linear infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
   }
-  100% {
-    opacity: 1;
-  }
 }
 
-@keyframes float {
+@keyframes gentle-float {
   0%,
   100% {
     transform: translateY(0);
@@ -199,11 +225,42 @@ body {
   }
 }
 
-@keyframes rotate-360 {
-  0% {
-    transform: rotate(0deg);
-  }
+.animate-gentle-float {
+  animation: gentle-float 5s ease-in-out infinite;
+}
+
+/* Stick bronto leg swing */
+.bronto-walker .bronto-leg-front {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: bronto-leg-swing 0.45s ease-in-out infinite;
+}
+
+.bronto-walker .bronto-leg-back {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: bronto-leg-swing 0.45s ease-in-out infinite reverse;
+}
+
+@keyframes bronto-leg-swing {
+  0%,
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
   }
 }
+
+/* Section wash — soft meadow band */
+.ghibli-section-wash {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(250, 247, 240, 0.32) 12%,
+    rgba(227, 240, 231, 0.28) 50%,
+    rgba(250, 247, 240, 0.32) 88%,
+    transparent 100%
+  );
+}
+

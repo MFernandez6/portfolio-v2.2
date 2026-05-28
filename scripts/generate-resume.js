@@ -1,6 +1,19 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
+const {
+  name,
+  titleGeneral,
+  location,
+  email,
+  phone,
+  website,
+  summaryGeneral,
+  experienceGeneral,
+  educationGeneral,
+  renderJobs,
+  renderEducationGeneral,
+} = require("./resume-content");
 
 async function generateResume() {
   const browser = await puppeteer.launch();
@@ -329,247 +342,31 @@ async function generateResume() {
     <body>
         <div class="container">
             <div class="header">
-                <div class="name">Miguel Angel Fernandez</div>
-                <div class="title">Legal Professional & Software Engineer</div>
+                <div class="name">${name}</div>
+                <div class="title">${titleGeneral}</div>
                 <div class="contact-info">
-                    <div class="contact-item">📍 Miami-Dade County, Florida</div>
-                    <div class="contact-item">📧 MiguelFernandez023@gmail.com</div>
-                    <div class="contact-item">📱 (786) 417-3869</div>
-                    <div class="contact-item">🌐 MiguelAngelFernandez.com</div>
+                    <div class="contact-item">📍 ${location}</div>
+                    <div class="contact-item">📧 ${email}</div>
+                    <div class="contact-item">📱 ${phone}</div>
+                    <div class="contact-item">🌐 ${website}</div>
                 </div>
             </div>
 
             <div class="section">
                 <div class="section-title">Professional Summary</div>
-                <div class="summary">
-                    Bilingual legal tech specialist and software engineer with extensive experience in both law and technology. Proven track record in leveraging AI and modern software to streamline legal workflows, support high-stakes litigation, and deliver business value. Experienced in implementing legal tech solutions, conducting document analysis, and bridging the gap between legal expertise and innovative technology.
-                </div>
+                <div class="summary">${summaryGeneral}</div>
             </div>
 
             <div class="section">
                 <div class="section-title">Education</div>
-                
-                <div class="certification">
-                    <div class="education-title">CompTIA Security+ Certification</div>
-                    <div class="education-dates">Anticipated Completion: July 2025</div>
-                    <div class="education-details">Industry-standard cybersecurity certification covering network security, compliance, and operational security</div>
-                </div>
-
                 <div class="education-grid">
-                    <div class="education-item">
-                        <div class="education-title">Associate of Science in Cybersecurity</div>
-                        <div class="education-school">Miami Dade College</div>
-                        <div class="education-dates">May 2024 - August 2025</div>
-                        <div class="education-details">Second associate degree. Coursework: Network Security, Digital Forensics, Ethical Hacking, Cybersecurity Fundamentals, Incident Response</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Certificate in Full-Stack Web Development</div>
-                        <div class="education-school">University of Miami</div>
-                        <div class="education-dates">September 2019 - March 2020</div>
-                        <div class="education-details">HTML, CSS, JavaScript, Node.js, SQL, Java, Docker, Git, Spring Boot</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Master of Science in Law and Policy</div>
-                        <div class="education-school">Nova Southeastern University</div>
-                        <div class="education-dates">September 2015 - September 2017</div>
-                        <div class="education-details">Magna Cum Laude; 3.78 GPA | Administrative Law, Immigration Law, Federal Privacy Law</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Law School (First Year)</div>
-                        <div class="education-school">Barry University School of Law | Orlando, FL</div>
-                        <div class="education-dates">August 2014 - August 2015</div>
-                        <div class="education-details">Completed first year without failing any classes. Transitioned to Master's program.</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Certificate in Paralegal Studies</div>
-                        <div class="education-school">University of Miami</div>
-                        <div class="education-dates">June 2013 - December 2013</div>
-                        <div class="education-details">Legal research, document preparation, civil procedure, and paralegal ethics</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Bachelor of Science in Political Science</div>
-                        <div class="education-school">Florida State University</div>
-                        <div class="education-dates">January 2009 - August 2011</div>
-                        <div class="education-details">American government, international relations, political theory, and research methods</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Associate of Arts in Political Science</div>
-                        <div class="education-school">Miami Dade College</div>
-                        <div class="education-dates">August 2006 - December 2008</div>
-                        <div class="education-details">General education and political science foundation courses</div>
-                    </div>
+                    ${renderEducationGeneral(educationGeneral)}
                 </div>
             </div>
 
             <div class="section">
                 <div class="section-title">Professional Experience</div>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Construction Defects Paralegal</div>
-                            <div class="job-company">Cole Scott & Kissane | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">September 2023 - Present</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Construction defects paralegal supporting complex litigation involving building code violations, structural issues, and construction negligence</li>
-                            <li>Implement and maintain legal tech solutions including Everlaw, KLDiscovery's Nebula, and Thomson Reuters CoCounsel to streamline workflows and enhance efficiency</li>
-                            <li>Leverage AI software to analyze extensive document productions using targeted prompts for rapid insights</li>
-                            <li>Support associates and partners in trial prep, depositions, and legal strategy development</li>
-                            <li>Manage complex construction defect litigation cases and coordinate with multiple stakeholders</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Software Engineer Consultant</div>
-                            <div class="job-company">FDM Group | Remote</div>
-                        </div>
-                        <div class="job-dates">June 2022 - June 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Created and implemented UI/UX designs using React.js, Node, and Java</li>
-                            <li>Managed SDLC of software components through to production</li>
-                            <li>Experienced in CI/CD tools (Jenkins) and DevOps for UAT environments</li>
-                            <li>Worked in Agile/Scrum teams and participated in code reviews</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">FDM Consultant (Software Engineer)</div>
-                            <div class="job-company">Deutsche Bank | Cary, NC</div>
-                        </div>
-                        <div class="job-dates">November 2022 - April 2023</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Selected by Deutsche Bank to support mobile corporate banking development team</li>
-                            <li>Engaged with stakeholders and simplified technical procedures for improved understanding</li>
-                            <li>Wrote, tested, and maintained code; identified and fixed bugs in software</li>
-                            <li>Collaborated with senior engineers and project managers to deliver high-quality solutions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Corporate Paralegal</div>
-                            <div class="job-company">Wood & Associate | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">February 2019 - May 2022</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>First-party insurance defense firm specializing in property damage, business interruption, and insurance coverage disputes</li>
-                            <li>Prepared proposals for settlements, propounded named insured and AOB discovery</li>
-                            <li>Drafted motions, pleadings, and legal memoranda for complex insurance litigation matters</li>
-                            <li>Conducted legal research on insurance law, coverage issues, and regulatory compliance requirements</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Litigation Paralegal</div>
-                            <div class="job-company">Pollack Pollack Isaac & DeCicco | New York, NY</div>
-                        </div>
-                        <div class="job-dates">July 2017 - January 2019</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Premier New York personal injury law firm specializing in catastrophic injuries, medical malpractice, and complex litigation</li>
-                            <li>Communicated with opposing counsel, judicial assistants, and court reporters across multiple jurisdictions</li>
-                            <li>Prepared summons, complaints, and legal demands for high-value personal injury and medical negligence cases</li>
-                            <li>Assisted in case management, document review, and trial preparation for complex litigation matters</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Paralegal</div>
-                            <div class="job-company">Nunez Law | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">March 2016 - May 2017</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Plaintiff's personal injury law firm specializing in auto accidents, slip and falls, and medical negligence cases</li>
-                            <li>Managed case files, prepared legal documents, and coordinated with clients and medical providers</li>
-                            <li>Assisted in discovery processes, document review, and trial preparation for complex personal injury litigation</li>
-                            <li>Conducted client intake interviews and maintained detailed case documentation and medical records</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Law Clerk</div>
-                            <div class="job-company">Diaz-Arguelles & Tejedor | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">June 2015 - December 2015</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Plaintiff's personal injury firm specializing in medical malpractice and complex healthcare litigation</li>
-                            <li>Conducted legal research on medical standards of care, expert witness qualifications, and case law</li>
-                            <li>Worked as a law clerk while attending law school, gaining hands-on experience in high-stakes medical negligence cases</li>
-                            <li>Assisted attorneys in preparing for depositions, expert witness interviews, and trial strategy development</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Paralegal</div>
-                            <div class="job-company">Pollack & Rosen | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">January 2014 - May 2014</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>One of Florida's largest collections law firms providing comprehensive collection services nationwide</li>
-                            <li>Managed high-volume debt collection cases across multiple jurisdictions and industries</li>
-                            <li>Prepared legal documents for collection proceedings, including complaints, motions, and settlement agreements</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Calendar Clerk</div>
-                            <div class="job-company">Gonzalez & Associate | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">February 2013 - December 2013</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Plaintiff's personal injury law firm calendar clerk managing court deadlines and attorney schedules</li>
-                            <li>Coordinated court appearances, depositions, mediations, and client meetings across multiple cases</li>
-                            <li>Maintained accurate case calendars and ensured compliance with court deadlines and procedural requirements</li>
-                        </ul>
-                    </div>
-                </div>
+                ${renderJobs(experienceGeneral)}
             </div>
 
             <div class="section">
@@ -603,10 +400,10 @@ async function generateResume() {
             </div>
 
             <div class="keywords">
-                KEYWORDS FOR ATS: Legal Technology, Software Engineering, Paralegal, Legal Research, Document Analysis, AI, React.js, Node.js, Java, Insurance Defense, Personal Injury, Medical Malpractice, Collections, Construction Defects, Litigation, Case Management, Trial Preparation, Discovery, Legal Documents, Compliance, Cybersecurity, DevOps, CI/CD, Agile, Scrum, Bilingual, Spanish, English
+                KEYWORDS FOR ATS: Claims Adjuster, Florida 6-20 License, Property Claims, Coverage Analysis, Insurance Adjusting, Legal Technology, Software Engineering, Paralegal, Construction Defects, Insurance Defense, Cybersecurity, React.js, Litigation, Settlement Negotiation, Bilingual, Spanish, English
             </div>
             <div class="footer">
-                <div class="footer-title">Legal Professional & Software Engineer</div>
+                <div class="footer-title">${titleGeneral}</div>
             </div>
         </div>
     </body>

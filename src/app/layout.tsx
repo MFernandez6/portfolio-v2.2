@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SkyBackground from "@/components/ghibli/SkyBackground";
+import FloatingLeaves from "@/components/ghibli/FloatingLeaves";
+import PageBottomBronto from "@/components/ghibli/PageBottomBronto";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -15,34 +27,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
+  title: "Miguel Angel Fernandez — Licensed Claims Adjuster | Software Engineer | Legal Professional",
   description:
-    "Bilingual legal tech specialist and software engineer with expertise in legal technology solutions, web development, and AI integration. Based in Miami-Dade County, Florida.",
+    "Florida-licensed claims adjuster combining legal expertise, cybersecurity, hospitality service, and policy analysis to advocate for insureds across the state.",
   keywords: [
-    "legal tech",
-    "software engineer",
-    "paralegal",
-    "web development",
-    "AI integration",
+    "claims adjuster",
+    "Florida 6-20 license",
+    "insurance",
+    "legal professional",
+    "cybersecurity",
     "Miami",
     "Florida",
+    "Manatee Insurance",
+    "SafePoint MGA",
   ],
   authors: [{ name: "Miguel Angel Fernandez" }],
   creator: "Miguel Angel Fernandez",
   publisher: "Miguel Angel Fernandez",
   robots: "index, follow",
   openGraph: {
-    title: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
+    title:
+      "Miguel Angel Fernandez — Licensed Claims Adjuster | Software Engineer | Legal Professional",
     description:
-      "Bilingual legal tech specialist and software engineer with expertise in legal technology solutions, web development, and AI integration.",
+      "A deliberate career pivot: law, technology, hospitality, and insurance united to serve insureds with clarity and care.",
     url: "https://miguelangelfernandez.com",
-    siteName: "Miguel Angel Fernandez Portfolio",
+    siteName: "Miguel Angel Fernandez",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
+        alt: "Miguel Angel Fernandez — Licensed Claims Adjuster | Software Engineer | Legal Professional",
       },
     ],
     locale: "en_US",
@@ -50,9 +65,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Miguel Angel Fernandez - Legal Professional & Software Engineer",
+    title:
+      "Miguel Angel Fernandez — Licensed Claims Adjuster | Software Engineer | Legal Professional",
     description:
-      "Bilingual legal tech specialist and software engineer with expertise in legal technology solutions, web development, and AI integration.",
+      "Florida-licensed adjuster bridging legal analysis, technology, and white-glove service.",
     images: ["/og-image.png"],
     creator: "@miguelangelfernandez",
   },
@@ -60,8 +76,6 @@ export const metadata: Metadata = {
     icon: "/profile.jpeg",
     apple: "/profile.jpeg",
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#060ce9",
 };
 
 export default function RootLayout({
@@ -72,10 +86,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorant.variable} ${nunito.variable} ${geistMono.variable} antialiased paper-texture`}
       >
+        <SkyBackground />
+        <FloatingLeaves />
         <Navbar />
-        {children}
+        <main className="relative z-10 pb-16 sm:pb-[4.5rem]">{children}</main>
+        <PageBottomBronto />
         <Footer />
       </body>
     </html>

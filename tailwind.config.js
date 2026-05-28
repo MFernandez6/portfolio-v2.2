@@ -1,4 +1,3 @@
-import typography from "@tailwindcss/typography";
 import animate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
@@ -7,64 +6,61 @@ const config = {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          "Geist",
-          "Inter",
-          "Sora",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-nunito)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-cormorant)", "Georgia", "serif"],
       },
       colors: {
-        jeopardy: {
-          blue: "#0a1a4f",
-          blueLight: "#1e2a6d",
-          blueDark: "#07123a",
-          yellow: "#ffe066",
-          yellowDark: "#ffd700",
-          accent: "#2e3a8c",
+        sky: {
+          50: "#f0f9ff",
+          100: "#dceefb",
+          200: "#b8ddf5",
         },
-        glass: "rgba(255,255,255,0.08)",
-      },
-      backgroundImage: {
-        "jeopardy-gradient":
-          "linear-gradient(135deg, #0a1a4f 0%, #1e2a6d 50%, #07123a 100%)",
+        meadow: {
+          50: "#f2f9f4",
+          100: "#e3f0e7",
+          400: "#7cb87c",
+        },
+        forest: {
+          700: "#3d5a45",
+          800: "#2f4a38",
+          900: "#1e3328",
+        },
+        paper: {
+          50: "#faf7f0",
+          100: "#f5f0e6",
+          300: "#e8dfd0",
+        },
+        terracotta: {
+          400: "#c97b63",
+          500: "#b86a52",
+        },
       },
       boxShadow: {
-        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
-        glow: "0 0 16px 2px #ffe066",
-      },
-      backdropBlur: {
-        xs: "2px",
+        paper:
+          "0 4px 24px -4px rgba(30, 51, 40, 0.12), 0 2px 8px -2px rgba(30, 51, 40, 0.06)",
+        soft: "0 8px 32px -8px rgba(74, 124, 89, 0.15)",
       },
       animation: {
-        fadeIn: "fadeIn 1s ease-in",
-        float: "float 3s ease-in-out infinite",
-        "rotate-360": "rotate-360 0.5s ease-in-out",
+        "gentle-float": "gentleFloat 6s ease-in-out infinite",
+        "fade-up": "fadeUp 0.7s ease-out forwards",
       },
       keyframes: {
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
-        },
-        float: {
+        gentleFloat: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
+          "50%": { transform: "translateY(-6px)" },
         },
-        "rotate-360": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },
   },
-  plugins: [typography, animate],
+  plugins: [animate],
 };
 
 export default config;

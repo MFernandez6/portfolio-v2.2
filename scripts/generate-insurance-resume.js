@@ -1,6 +1,20 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
+const {
+  name,
+  titleInsurance,
+  location,
+  email,
+  phone,
+  website,
+  summaryInsurance,
+  license,
+  experienceInsurance,
+  educationInsurance,
+  renderJobs,
+  renderEducationInsurance,
+} = require("./resume-content");
 
 async function generateInsuranceResume() {
   const browser = await puppeteer.launch();
@@ -345,142 +359,30 @@ async function generateInsuranceResume() {
     <body>
         <div class="container">
             <div class="header">
-                <div class="name">Miguel Angel Fernandez</div>
-                <div class="title">Licensed Claims Adjuster & Legal Professional</div>
+                <div class="name">${name}</div>
+                <div class="title">${titleInsurance}</div>
                 <div class="contact-info">
-                    <div class="contact-item">📍 Miami-Dade County, Florida</div>
-                    <div class="contact-item">📧 MiguelFernandez023@gmail.com</div>
-                    <div class="contact-item">📱 (786) 417-3869</div>
-                    <div class="contact-item">🌐 MiguelAngelFernandez.com</div>
+                    <div class="contact-item">📍 ${location}</div>
+                    <div class="contact-item">📧 ${email}</div>
+                    <div class="contact-item">📱 ${phone}</div>
+                    <div class="contact-item">🌐 ${website}</div>
                 </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="summary">${summaryInsurance}</div>
             </div>
 
             <div class="section">
                 <div class="section-title">Insurance & Legal Experience</div>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Construction Defects Paralegal</div>
-                            <div class="job-company">Cole Scott & Kissane | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">September 2023 - Present</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Specialized in construction defects litigation involving building code violations, structural damage, and property insurance claims</li>
-                            <li>Analyzed complex insurance policies and coverage issues for construction defect claims and property damage disputes</li>
-                            <li>Conducted detailed claim assessments and coordinated with expert witnesses and insurance adjusters</li>
-                            <li>Managed high-volume of construction defect cases</li>
-                            <li>Implemented advanced legal technology solutions for efficient claim processing and document analysis</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Corporate Paralegal - Insurance Defense</div>
-                            <div class="job-company">Wood & Associate | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">February 2019 - May 2022</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>First-party insurance defense firm specializing in property damage, and coverage disputes</li>
-                            <li>Prepared comprehensive settlement proposals and conducted thorough insurance policy analysis</li>
-                            <li>Drafted legal memoranda on insurance coverage issues</li>
-                            <li>Conducted detailed claim investigations and coordinated with insurance adjusters</li>
-                            <li>Managed complex insurance litigation matters with focus on coverage disputes and claim resolution</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Litigation Paralegal</div>
-                            <div class="job-company">Pollack Pollack Isaac & DeCicco | New York, NY</div>
-                        </div>
-                        <div class="job-dates">July 2017 - January 2019</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Premier personal injury firm handling premises liability and bodily injury claims</li>
-                            <li>Prepared discovery requests and responses based on claim representations</li>
-                            <li>Conducted comprehensive claim investigations and analyzed insurance coverage for complex cases</li>
-                            <li>Assisted in client intake and trial preparation related to insurance disputes</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Personal Injury Paralegal</div>
-                            <div class="job-company">Nunez Law | Miami, FL</div>
-                        </div>
-                        <div class="job-dates">March 2016 - May 2017</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Plaintiff's personal injury firm specializing in motor vehicle collisions, and slip and falls</li>
-                            <li>Managed insurance claim files and coordinated with insurance adjusters and property damage experts</li>
-                            <li>Conducted detailed claim investigations and prepared comprehensive property damage assessments</li>
-                            <li>Assisted in insurance coverage analysis and settlement negotiations for property damage claims</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Personal Injury & Medical Malpractice Paralegal</div>
-                            <div class="job-company">Diaz-Arguelles & Tejedor | Orlando, FL</div>
-                        </div>
-                        <div class="job-dates">June 2015 - December 2015</div>
-                    </div>
-                    <div class="job-description">
-                        <ul>
-                            <li>Specialized in medical malpractice cases involving insurance coverage disputes and claim analysis</li>
-                            <li>Conducted detailed investigations of insurance policies and coverage issues for medical negligence claims</li>
-                            <li>Coordinated with insurance adjusters and expert witnesses for comprehensive claim evaluation</li>
-                        </ul>
-                    </div>
-                </div>
+                ${renderJobs(experienceInsurance, "disc")}
             </div>
 
             <div class="section">
                 <div class="section-title">Education & Certifications</div>
-                
                 <div class="education-grid">
-                    <div class="education-item">
-                        <div class="education-title">AdjustPro Pre-Licensing</div>
-                        <div class="education-school">AdjustPro Training</div>
-                        <div class="education-dates">Completed 2025</div>
-                        <div class="education-list">Florida DFS-approved 40-hour course covering claims handling, coverage analysis, ethics, and Florida insurance statutes.</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Associate of Science in Cybersecurity</div>
-                        <div class="education-school">Miami Dade College</div>
-                        <div class="education-dates">May 2024 - August 2025</div>
-                        <div class="education-list">Focus: network security, digital forensics, incident response, and risk assessment.</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Bachelor of Science in Political Science</div>
-                        <div class="education-school">Florida State University</div>
-                        <div class="education-dates">January 2009 - August 2011</div>
-                        <div class="education-list">Emphasis on public policy analysis, governance, and regulatory frameworks.</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-title">Master of Science in Law and Policy</div>
-                        <div class="education-school">Nova Southeastern University</div>
-                        <div class="education-dates">September 2015 - September 2017</div>
-                        <div class="education-list">Coursework: administrative law, privacy law, and regulatory compliance.</div>
-                    </div>
+                    ${renderEducationInsurance(educationInsurance)}
                 </div>
             </div>
 
@@ -509,7 +411,7 @@ async function generateInsuranceResume() {
 
             <div class="section">
                 <div class="section-title">License(s)</div>
-                <div class="license-item">Florida 6-20 Adjuster License No. G279764</div>
+                <div class="license-item">${license.name} No. ${license.number}</div>
             </div>
 
             <div class="footer">
